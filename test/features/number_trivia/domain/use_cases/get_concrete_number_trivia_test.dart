@@ -36,7 +36,7 @@ void main() {
         (final _) async => Right<Failure, NumberTrivia>(tNumberTrivia),
       );
       // The "act" phase of the test. Call the not-yet-existent method.
-      final Either<Failure, NumberTrivia> result =
+      final Either<Failure, NumberTrivia>? result =
           await usecase(Params(number: tNumber));
       // UseCase should simply return whatever was returned from the Repository
       expect(result, Right<Failure, NumberTrivia>(tNumberTrivia));
