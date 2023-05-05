@@ -4,7 +4,7 @@ import 'package:ml_project/features/number_trivia/data/repositories/number_trivi
 
 import '../../../../core/error/exception.dart';
 import '../../../../core/error/failures.dart';
-import '../../../../core/platform/network_info.dart';
+import '../../../../core/network/network_info.dart';
 import '../../domain/entities/number_trivia.dart';
 import '../../domain/repositories/number_trivia_repository.dart';
 import '../models/number_trivia_model.dart';
@@ -45,9 +45,9 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
       }
     } else {
       try {
-        final NumberTriviaModel localTrivia =
+        final NumberTriviaModel? localTrivia =
             await localDataSource.getLastNumberTrivia();
-        return Right<Failure, NumberTrivia>(localTrivia);
+        return Right<Failure, NumberTrivia>(localTrivia!);
       } on CacheException {
         return Left<Failure, NumberTrivia>(CacheFailure());
       }

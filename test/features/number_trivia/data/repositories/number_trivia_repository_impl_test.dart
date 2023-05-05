@@ -7,7 +7,7 @@ import 'package:ml_project/features/number_trivia/data/repositories/number_trivi
 import 'package:ml_project/features/number_trivia/data/repositories/number_trivia_repository_impl.dart';
 import 'package:ml_project/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:mockito/annotations.dart';
-import 'package:ml_project/core/platform/network_info.dart';
+import 'package:ml_project/core/network/network_info.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ml_project/features/number_trivia/data/models/number_trivia_model.dart';
 
